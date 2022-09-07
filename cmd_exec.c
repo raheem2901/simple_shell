@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * is_cdir - checks ":" if is in the current directory.
+ * is_cdir - checks ":" colon if is in the current directory.
  * @path: type char pointer char.
  * @i: type int pointer of index.
  * Return: 1 if the path is searchable in the cd, 0 otherwise.
@@ -167,7 +167,7 @@ int cmd_exec(data_shell *datash)
 	int state;
 	int exec;
 	char *dir;
-	(void) wpd;
+	(void)wpd;
 
 	exec = is_executable(datash);
 	if (exec == -1)
@@ -195,7 +195,8 @@ int cmd_exec(data_shell *datash)
 	}
 	else
 	{
-		do {
+		do
+		{
 			wpd = waitpid(pd, &state, WUNTRACED);
 		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
